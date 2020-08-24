@@ -2,14 +2,13 @@
 
 # ./edownload.sh <referer> <m3u8_url> <ts_url> <filename>
 
-mkdir out
-asset_dir="./asset/"
 out_dir="./out"
+mkdir $out_dir
 referer=$1
 m3u8_url=$2
 ts_url=$3
 file_name=$4
-file_name=$(echo $file_name | sed "s/ //g")
+file_name=${file_name// /}
 m3u8_file="$file_name.m3u8"
 ts_file="pwd_$file_name.ts"
 key_file="$file_name.KEY"
